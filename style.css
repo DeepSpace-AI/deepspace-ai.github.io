@@ -1,1 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #0b0f1a;
+  color: #eaeaf0;
+}
+
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: radial-gradient(circle at top, #1f3cff, #0b0f1a);
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+ul {
+  line-height: 2;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.7;
+}
 
