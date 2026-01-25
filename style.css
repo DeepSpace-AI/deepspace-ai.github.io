@@ -27,10 +27,28 @@ body{
     var(--bg);
   color:var(--txt);
   line-height:1.65;
+  overflow-x:hidden;
 }
 
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
+
+/* ================= Scroll progress bar ================= */
+.scrollbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+  z-index:9999;
+  background:rgba(255,255,255,.06);
+}
+.scrollbar-fill{
+  height:100%;
+  transform-origin:left center;
+  transform:scaleX(0);
+  background:linear-gradient(90deg, rgba(58,75,255,.95), rgba(98,211,255,.9), rgba(138,91,255,.85));
+}
 
 /* ================= HERO ================= */
 .hero{
@@ -53,9 +71,16 @@ a:hover{text-decoration:underline}
   position:absolute;
   inset:-2px;
   background:
-    radial-gradient(700px 420px at 25% 35%, rgba(98,211,255,.14), transparent 62%),
-    radial-gradient(680px 420px at 70% 20%, rgba(138,91,255,.12), transparent 60%);
+    radial-gradient(700px 420px at 25% 35%, rgba(98,211,255,.16), transparent 62%),
+    radial-gradient(680px 420px at 70% 20%, rgba(138,91,255,.14), transparent 60%);
+  filter:saturate(1.05);
   pointer-events:none;
+  animation: floatGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow{
+  0%{ transform: translate3d(0,0,0) }
+  100%{ transform: translate3d(0,-14px,0) }
 }
 
 .hero::after{
@@ -95,7 +120,6 @@ a:hover{text-decoration:underline}
   font-size:20px;
   color:var(--txt);
 }
-
 .brand:hover{ text-decoration:none; }
 
 .brand-text span{color:var(--accent)}
@@ -114,6 +138,7 @@ a:hover{text-decoration:underline}
   border-radius:14px;
   border:1px solid transparent;
   background:transparent;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
 }
 
 .nav-links a:hover{
@@ -121,6 +146,7 @@ a:hover{text-decoration:underline}
   border-color:rgba(255,255,255,.14);
   text-decoration:none;
   background:rgba(255,255,255,.05);
+  transform: translateY(-1px);
 }
 
 .nav-links .cta{
@@ -145,16 +171,35 @@ a:hover{text-decoration:underline}
   border-radius:99px;
 }
 
+/* ================= Reveal animation ================= */
+.reveal{
+  opacity:0;
+  transform: translateY(12px);
+  transition: opacity .7s ease, transform .7s ease;
+  will-change: opacity, transform;
+}
+.reveal.in{
+  opacity:1;
+  transform: translateY(0);
+}
+
 /* ================= HERO CONTENT ================= */
 .hero-inner{
   position:relative;
   z-index:2;
-  max-width:740px;
+  max-width:760px;
   margin-left:auto;
   margin-right:40px;
   padding:68px 22px 50px;
   width:100%;
   text-align:left;
+}
+
+.gradient-text{
+  background: linear-gradient(90deg, rgba(98,211,255,1), rgba(138,91,255,1));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
 .pill{
@@ -173,9 +218,9 @@ a:hover{text-decoration:underline}
 }
 
 .hero h1{
-  font-size: clamp(36px, 5.2vw, 62px);
+  font-size: clamp(36px, 5.2vw, 64px);
   margin:0 0 12px;
-  line-height:1.08;
+  line-height:1.05;
   letter-spacing:-.02em;
 }
 
@@ -246,6 +291,8 @@ a:hover{text-decoration:underline}
   border-radius:18px;
   padding:12px 12px;
   backdrop-filter: blur(8px);
+  transform-style: preserve-3d;
+  transition: transform .15s ease;
 }
 
 .mini-kpi{
@@ -336,10 +383,10 @@ a:hover{text-decoration:underline}
   border-radius:var(--radius);
   padding:18px 18px 16px;
   box-shadow:var(--shadow);
+  transform-style: preserve-3d;
   transition: transform .15s ease, border-color .15s ease, background .15s ease;
 }
 .card:hover{
-  transform: translateY(-2px);
   border-color: rgba(98,211,255,.26);
   background:rgba(255,255,255,.06);
 }
@@ -445,4 +492,8 @@ a:hover{text-decoration:underline}
   .hero::after{
     background: rgba(11,15,26,.78);
   }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; transition:none !important; }
 }
