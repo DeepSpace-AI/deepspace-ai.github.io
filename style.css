@@ -32,7 +32,7 @@ a:hover{text-decoration:underline}
   flex-direction:column;
 
   /* key change: contain + left anchor -> avoids cropping important parts */
-  background-image:url("assets/cover.png");
+  background-image:url("cover.png");
   background-repeat:no-repeat;
   background-size:contain;
   background-position:left center;
