@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <!-- ================= HERO ================= -->
   <header class="hero" role="banner" aria-label="WarBeesAI Hero">
     <nav class="nav">
       <a class="brand" href="#" aria-label="WarBeesAI Home">
@@ -22,7 +21,11 @@
         <span class="brand-text">WarBees<span>.AI</span></span>
       </a>
 
-      <div class="nav-links">
+      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div id="navLinks" class="nav-links">
         <a href="#solutions">Solutions</a>
         <a href="#capabilities">Capabilities</a>
         <a href="#why">Why Us</a>
@@ -31,10 +34,11 @@
     </nav>
 
     <div class="hero-inner">
+      <div class="pill">Security first AI systems</div>
       <h1>Secure Intelligence for the Real World</h1>
       <p class="subhead">
-        WarBeesAI develops security-first AI systems for enterprise deployment—covering
-        LLM safety, adversarial robustness, secure inference, and model risk governance.
+        WarBeesAI develops security first AI for enterprise deployment covering
+        LLM safety, jailbreak defense, adversarial robustness, secure inference, and model risk governance.
       </p>
 
       <div class="hero-actions">
@@ -48,41 +52,57 @@
         <span>Adversarial Robustness</span>
         <span>Secure Deployment</span>
       </div>
+
+      <div class="hero-mini">
+        <div class="mini-card">
+          <div class="mini-kpi">Faster to deploy</div>
+          <div class="mini-sub">Practical controls that fit production</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-kpi">Measurable risk</div>
+          <div class="mini-sub">Scorecards, telemetry, and evaluation</div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-kpi">Governance ready</div>
+          <div class="mini-sub">Auditability and policy enforcement</div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- ================= TRUST STRIP ================= -->
   <section class="strip" aria-label="Positioning">
     <div class="strip-inner">
       <div class="strip-item">
-        <div class="kpi">Security-first</div>
-        <div class="kpi-sub">Built for high-stakes environments</div>
+        <div class="kpi">Security first</div>
+        <div class="kpi-sub">Built for high stakes environments</div>
       </div>
       <div class="strip-item">
-        <div class="kpi">AI-native</div>
-        <div class="kpi-sub">Designed for LLM/ML production systems</div>
+        <div class="kpi">AI native</div>
+        <div class="kpi-sub">Designed for LLM and ML production systems</div>
       </div>
       <div class="strip-item">
         <div class="kpi">Deployable</div>
-        <div class="kpi-sub">Practical tooling, measurable outcomes</div>
+        <div class="kpi-sub">Practical tooling and measurable outcomes</div>
       </div>
     </div>
   </section>
 
-  <!-- ================= SOLUTIONS ================= -->
   <section id="solutions" class="section">
-    <h2>Solutions</h2>
-    <p class="lead">
-      We help organizations defend AI systems against emerging threats while maintaining usability,
-      compliance, and performance.
-    </p>
+    <div class="section-head">
+      <h2>Solutions</h2>
+      <p class="lead">
+        We help organizations defend AI systems against emerging threats while maintaining usability,
+        compliance, and performance.
+      </p>
+    </div>
 
     <div class="grid">
-      <article class="card">
-        <h3>LLM Safety & Jailbreak Defense</h3>
+      <article class="card card-glow">
+        <div class="icon">🛡️</div>
+        <h3>LLM Safety and Jailbreak Defense</h3>
         <p>
           Detect, prevent, and monitor jailbreak attempts, prompt injection, and unsafe generations
-          with policy-aligned safeguards and real-time controls.
+          with policy aligned safeguards and real time controls.
         </p>
         <ul>
           <li>Prompt injection and jailbreak detection</li>
@@ -91,7 +111,8 @@
         </ul>
       </article>
 
-      <article class="card">
+      <article class="card card-glow">
+        <div class="icon">⚔️</div>
         <h3>Adversarial Robustness</h3>
         <p>
           Harden models against adversarial attacks and distribution shifts across vision, text,
@@ -99,12 +120,13 @@
         </p>
         <ul>
           <li>Robustness testing and attack simulation</li>
-          <li>Defense strategies and risk-aware evaluation</li>
+          <li>Defense strategies and risk aware evaluation</li>
           <li>Continuous monitoring for drift and anomalies</li>
         </ul>
       </article>
 
-      <article class="card">
+      <article class="card card-glow">
+        <div class="icon">🔒</div>
         <h3>Secure AI Deployment</h3>
         <p>
           Build secure inference pipelines with governance, auditability, and operational guardrails
@@ -119,20 +141,21 @@
     </div>
   </section>
 
-  <!-- ================= CAPABILITIES ================= -->
   <section id="capabilities" class="section dark">
-    <h2>Capabilities</h2>
-    <p class="lead">
-      WarBeesAI combines security engineering and AI research to deliver practical, measurable defenses.
-    </p>
+    <div class="section-head">
+      <h2>Capabilities</h2>
+      <p class="lead">
+        WarBeesAI combines security engineering and AI research to deliver practical, measurable defenses.
+      </p>
+    </div>
 
     <div class="grid two">
       <article class="card soft">
-        <h3>Assessment & Benchmarking</h3>
+        <h3>Assessment and Benchmarking</h3>
         <ul>
-          <li>Threat modeling for AI/LLM products</li>
-          <li>Red-team style evaluation and reporting</li>
-          <li>Safety/robustness scorecards and KPIs</li>
+          <li>Threat modeling for AI and LLM products</li>
+          <li>Red team style evaluation and reporting</li>
+          <li>Safety and robustness scorecards and KPIs</li>
         </ul>
       </article>
 
@@ -146,7 +169,7 @@
       </article>
 
       <article class="card soft">
-        <h3>Monitoring & Response</h3>
+        <h3>Monitoring and Response</h3>
         <ul>
           <li>Attack detection, telemetry, and alerts</li>
           <li>Abuse prevention and rate limiting</li>
@@ -157,17 +180,20 @@
       <article class="card soft">
         <h3>Integration</h3>
         <ul>
-          <li>API-first integration with existing stacks</li>
-          <li>Support for cloud and on-prem deployments</li>
+          <li>API first integration with existing stacks</li>
+          <li>Support for cloud and on prem deployments</li>
           <li>Security reviews and documentation</li>
         </ul>
       </article>
     </div>
   </section>
 
-  <!-- ================= WHY US ================= -->
   <section id="why" class="section">
-    <h2>Why WarBeesAI</h2>
+    <div class="section-head">
+      <h2>Why WarBeesAI</h2>
+      <p class="lead">A security minded team focused on real deployments and measurable outcomes.</p>
+    </div>
+
     <div class="grid two">
       <div class="card">
         <h3>Security outcomes, not just research</h3>
@@ -181,12 +207,12 @@
         <h3>Built for modern AI systems</h3>
         <p>
           Our approach is designed around real production constraints: latency, cost, user experience,
-          and governance—without compromising security.
+          and governance without compromising security.
         </p>
       </div>
 
       <div class="card">
-        <h3>Trust & governance ready</h3>
+        <h3>Trust and governance ready</h3>
         <p>
           From logging and auditability to policy enforcement, we support environments that require
           accountability and compliance alignment.
@@ -194,21 +220,22 @@
       </div>
 
       <div class="card">
-        <h3>Founder-driven execution</h3>
+        <h3>Founder driven execution</h3>
         <p>
-          A hands-on team that iterates quickly, ships improvements, and supports deployments with
+          A hands on team that iterates quickly, ships improvements, and supports deployments with
           clear deliverables and documentation.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ================= CONTACT ================= -->
   <section id="contact" class="section dark">
-    <h2>Contact</h2>
-    <p class="lead">
-      Interested in AI security, LLM safety, or robust deployment? Reach out for a technical discussion.
-    </p>
+    <div class="section-head">
+      <h2>Contact</h2>
+      <p class="lead">
+        Interested in AI security, LLM safety, or robust deployment? Reach out for a technical discussion.
+      </p>
+    </div>
 
     <div class="contact-box">
       <div class="contact-item">
@@ -228,5 +255,24 @@
   <footer class="footer">
     <div>© 2026 WarBees.AI — All rights reserved.</div>
   </footer>
+
+  <script>
+    const btn = document.querySelector(".menu-btn");
+    const links = document.querySelector("#navLinks");
+
+    function closeMenu(){
+      btn.setAttribute("aria-expanded", "false");
+      links.classList.remove("open");
+    }
+
+    btn.addEventListener("click", () => {
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      links.classList.toggle("open");
+    });
+
+    links.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+    window.addEventListener("resize", () => { if (window.innerWidth > 980) closeMenu(); });
+  </script>
 </body>
 </html>
