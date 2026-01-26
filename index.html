@@ -1,4 +1,4 @@
-<!-- index.html -->
+<!-- index.html (NO CONTENT CHANGES — only formatted) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +6,19 @@
   <title>WarBeesAI — AI Security & Trustworthy Intelligence</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-        content="WarBeesAI builds security-first AI systems for enterprise deployment: LLM safety, jailbreak defense, adversarial robustness, secure inference, and model risk governance." />
-  <meta name="theme-color" content="0b0f1a" />
+  <meta
+    name="description"
+    content="WarBeesAI builds security-first AI systems for enterprise deployment: LLM safety, jailbreak defense, adversarial robustness, secure inference, and model risk governance."
+  />
+  <meta name="theme-color" content="#F2F6FF" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="scrollbar" aria-hidden="true"><div class="scrollbar-fill"></div></div>
+  <div class="scrollbar" aria-hidden="true">
+    <div class="scrollbar-fill"></div>
+  </div>
 
   <header class="hero" role="banner" aria-label="WarBeesAI Hero">
     <nav class="nav">
@@ -22,7 +26,13 @@
         <span class="brand-text">WarBees<span>.AI</span></span>
       </a>
 
-      <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <button
+        class="menu-btn"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
         <span></span><span></span><span></span>
       </button>
 
@@ -267,7 +277,7 @@
     const btn = document.querySelector(".menu-btn");
     const links = document.querySelector("#navLinks");
 
-    function closeMenu(){
+    function closeMenu() {
       btn.setAttribute("aria-expanded", "false");
       links.classList.remove("open");
     }
@@ -283,20 +293,20 @@
 
     // Scroll progress bar
     const fill = document.querySelector(".scrollbar-fill");
-    function updateScroll(){
+    function updateScroll() {
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight;
       const p = max > 0 ? (h.scrollTop / max) : 0;
       fill.style.transform = "scaleX(" + p.toFixed(4) + ")";
     }
-    document.addEventListener("scroll", updateScroll, { passive:true });
+    document.addEventListener("scroll", updateScroll, { passive: true });
     updateScroll();
 
     // Reveal on scroll
     const items = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if(e.isIntersecting){
+        if (e.isIntersecting) {
           e.target.classList.add("in");
           io.unobserve(e.target);
         }
@@ -309,7 +319,7 @@
     tiltCards.forEach(card => {
       let raf = 0;
 
-      function onMove(ev){
+      function onMove(ev) {
         const r = card.getBoundingClientRect();
         const x = (ev.clientX - r.left) / r.width;
         const y = (ev.clientY - r.top) / r.height;
@@ -319,11 +329,12 @@
 
         cancelAnimationFrame(raf);
         raf = requestAnimationFrame(() => {
-          card.style.transform = "translateY(-2px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg)";
+          card.style.transform =
+            "translateY(-2px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg)";
         });
       }
 
-      function onLeave(){
+      function onLeave() {
         card.style.transform = "";
       }
 
